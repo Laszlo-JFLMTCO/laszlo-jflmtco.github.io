@@ -57,6 +57,18 @@ a {
   font-weight: bold;
 }
 
+code {
+    font-family: monospace;
+    background: black;
+    color: white;
+    display: block;
+    margin: 2%;
+    width: 90%;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+
 /*
 =================================================
 Sidebar

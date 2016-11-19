@@ -43,6 +43,17 @@
           <h2>My favorite technical concept: Recursion</h2>
           <p>Definitely my favorite as it allows us to build very powerful methods with very short code.</p>
           <p>Also in a way once I got a decent handle on the concept and start implementing it in the various projects we worked on, it gave me this boost of confidence that I am not that hopeless and one day actually become a cool programmer...</p>
+          <code><pre>
+
+      def find_words_on_branch(node, word_suggestion)
+        word_suggestion += node.letter
+        suggestions << word_suggestion if node.terminator?
+        find_words_on_branch(node, word_suggestion) if node.has_children?
+      end
+            </pre>
+          </code>
+          <p>The above example is from our Complete-Me project, where we implemented a smartphone-like autocomplete feature. Behind the scenes we had a <a href = "https://en.wikipedia.org/wiki/Linked_list" target = "_blank">linked list</a> that stored about 250,000 words. Nodes were the various branches within our tree of nodes. While typing, our implementation allowed to request the list of words available in our disctionary based on the the text already typed. In order to scan through the branches, we used recursion, where our method <code>find_words_on_branch</code> started calling itself until no more nodes were available. In order to avoid an infinite loop, during recursive method calls, it is important to set an exit criteria. In our case the <code>if node.has_children?</code> evaluation served this purpose.</p>
+          <p>I knew you will get excited, too... :-)</p>
       </div>
     </div>
     <footer>
